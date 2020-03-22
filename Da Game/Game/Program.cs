@@ -20,27 +20,40 @@ namespace Game
                 for (int i = 0; i < email.Length; i++)
                 {
                     
-                    if (email[i].Length > 0 && email[i] == "bob22@mail.com" || email[i] == "saso.dimitrovski@yahoo.com" && email[i].Contains("@") && email[i].Contains("."))
+                    if (!(email[i].Length > 0 ))
                     {
-                        Console.WriteLine("Enter your password:");
-                        string passwordInput = Console.ReadLine();
-                        for (int j = 0; j < passwordInput.Length; j++)
-                        {
-                            if (password[i] == "bobbest" || password[i] == "saso123")
-                            {
-                                Console.WriteLine("Welcome " + email[i]);
-                            }
-                            
-                        }
-                        
-                        Console.WriteLine("Press Enter to start with character creation...");
+                        Console.WriteLine("You didn't enter your email!");
+                        continue;
+                    }
+                   if(!(email[i] == "bob22@mail.com"))
+                    {
+                        Console.WriteLine("Please write your correct email!");
+                        continue; 
+                    }
+                   if(!(email[i] == "saso.dimitrovski@yahoo.com"))
+                    {
+                        Console.WriteLine("Please write your correct email!");
+                        continue;
+                    }
+                   if(!(email[i].Contains("@")))
+                    {
+                        Console.WriteLine("Your email must contain @!");
+                        continue;
+                    }
+                    if (!(email[i].Contains(".com")))
+                    {
+                        Console.WriteLine("Your email must contain .com!");
+                        continue;
                     }
                     else
                     {
-                        Console.WriteLine("Please try again!");
+                        Console.WriteLine("Enter your password");
                     }
-                    Console.ReadLine();
+
+                    
+                    
                 }
+                Console.ReadLine();
             }
             
             
